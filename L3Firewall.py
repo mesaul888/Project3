@@ -44,12 +44,12 @@ class Firewall (EventMixin):
 			for line in csvreader:
 				# Read MAC address. Convert string to Ethernet address using the EthAddr() function.
                 if line['mac_0'] != 'any':
-				    mac_0 = EthAddr(line['mac_0'])
+		    mac_0 = EthAddr(line['mac_0'])
                 else:
                     mac_0 = None
 
                 if line['mac_1'] != 'any':
-        			mac_1 = EthAddr(line['mac_1'])
+        	    mac_1 = EthAddr(line['mac_1'])
                 else:
                     mac_1 = None
 				# Append to the array storing all MAC pair.
@@ -246,7 +246,7 @@ class Firewall (EventMixin):
 		          }]
 
 		    	writer = csv.DictWriter(csvfile, fieldnames = fields)
-				writer.writerows(newRule)
+			writer.writerows(newRule)
 		    return True
 
 
