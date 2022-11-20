@@ -43,15 +43,15 @@ class Firewall (EventMixin):
 			csvreader = csv.DictReader(rules) # Map into a dictionary
 			for line in csvreader:
 				# Read MAC address. Convert string to Ethernet address using the EthAddr() function.
-                if line['mac_0'] != 'any':
-		    mac_0 = EthAddr(line['mac_0'])
-                else:
-                    mac_0 = None
+                		if line['mac_0'] != 'any':
+		    			mac_0 = EthAddr(line['mac_0'])
+                		else:
+                    			mac_0 = None
 
-                if line['mac_1'] != 'any':
-        	    mac_1 = EthAddr(line['mac_1'])
-                else:
-                    mac_1 = None
+                		if line['mac_1'] != 'any':
+        	    			mac_1 = EthAddr(line['mac_1'])
+                		else:
+                    			mac_1 = None
 				# Append to the array storing all MAC pair.
 				self.disbaled_MAC_pair.append((mac_0,mac_1))
 
